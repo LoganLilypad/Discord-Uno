@@ -1,3 +1,5 @@
 # Discord-Uno
-
-Its like Uno... but in Discord
+The popular game Uno, but this time on Discord!
+##Uno!
+Yo momma phat!
+*Shows reverse card*
