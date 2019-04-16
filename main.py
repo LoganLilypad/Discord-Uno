@@ -1,7 +1,6 @@
 import discord
 import json
 from PIL import Image
+import cards
 
-img = Image.open("cards.png")
-cropped = img.crop((0, 0, 165, 256))
-cropped.save("card.png")
+cards.make("r4")
