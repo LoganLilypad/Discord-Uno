@@ -23,10 +23,11 @@ xloc = {
     "d2": 240 *  12
 }
 
+img = Image.open('cards.png')
+
 def make(id):
     cropImage(xloc[id[2:]], yloc[id[0]])
 
 def cropImage(x, y):
-    img = Image.open('cards.png')
     cropped = img.crop((x, y, x + 242, y + 362))
     cropped.save('card.png')

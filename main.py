@@ -1,18 +1,20 @@
 from cards import make
 
 import discord
+from discord.ext import commands
 import json
 
-class Client(discord.Client):
-    async def on_ready(self):
-        print('Logged on as', self.user)
+bot = commands.Bot(command_prefix='!')
 
-    async def on_message(self, message):
-        if message.author == self.user:
-            return
+with open('config.json') as file:
+    config = json.load(file)
 
-        if message.content == 'ping':
-            await message.channel.send('pong')
-
-client = MyClient()
-client.run('token')
+@bot.command()
+async def card(ctx, arg):
+    try:
+        make(arg)
+        print(arg)
+        await ctx.send('', file=discord.File('card.png', 'cool.png'))
+    except:
+        await ctx.send('Looks like you entered an invalid card ID.')
+bot.run(config['token'])
