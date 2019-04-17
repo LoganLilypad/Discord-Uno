@@ -1,12 +1,18 @@
-<<<<<<< HEAD
-from crop import cropImage
+from cards import make
 
-cropImage(0, 0)
-=======
 import discord
 import json
-from PIL import Image
-import cards
 
-cards.make("r4")
->>>>>>> 755ae37ff73443938e7f6314e65be6b9eb2b48cb
+class Client(discord.Client):
+    async def on_ready(self):
+        print('Logged on as', self.user)
+
+    async def on_message(self, message):
+        if message.author == self.user:
+            return
+
+        if message.content == 'ping':
+            await message.channel.send('pong')
+
+client = MyClient()
+client.run('token')
