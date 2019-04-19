@@ -18,7 +18,7 @@ with open('config.json') as file:
 async def randdeck(ctx):
     try:
         images = []
-        for id in range(7):
+        for _ in range(7):
             images.append(random.choice(colors) + '_' + random.choice(cards))
         generate_cards(images)
         await ctx.send('', file=discord.File('last.png', 'deck.png'))
