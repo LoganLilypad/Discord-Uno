@@ -18,7 +18,7 @@ def generate_cards(images):
     image.save('last.png', 'PNG')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/generate-cards', methods=['POST'])
 def result():
     generate_cards(json.loads(request.data)['images'])
     return '{}'
