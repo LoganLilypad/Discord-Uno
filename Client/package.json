@@ -1,15 +1,24 @@
 {
-	"name": "discord-uno",
-	"version": "1.0.0",
-	"description": "Discord UNO",
-	"main": "./src/index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "Vrganj",
-	"repository": "https://github.com/LoganLilypad/Discord-Uno",
-	"dependencies": {
-		"discord.js": "github:discordjs/discord.js",
-		"util": "^0.11.1"
-	}
+  "name": "discord-uno",
+  "version": "1.0.0",
+  "description": "Discord UNO",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vrganj",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoganLilypad/Discord-Uno.git"
+  },
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "node-run-cmd": "^1.0.1",
+    "util": "^0.11.1"
+  },
+  "bugs": {
+    "url": "https://github.com/LoganLilypad/Discord-Uno/issues"
+  },
+  "homepage": "https://github.com/LoganLilypad/Discord-Uno#readme",
+  "license": "ISC"
 }
