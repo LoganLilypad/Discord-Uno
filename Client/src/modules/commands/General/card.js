@@ -27,9 +27,11 @@ module.exports.run = async (client, message) => {
             .replace('green ', 'g_')
             .replace('draw ', 'd')
 
+    if (card === 'random') card = cards[Math.floor(Math.random() * cards.length)]
+
     if (args[1]) {
         if (cards.includes(card)) {
-            message.reply('here\'s your card', { file: `../cards/${card}.png` });
+            message.channel.send('', { file: `../cards/${card}.png` });
         } else {
             message.channel.send('Looks like you entered an invalid card name. Valid names are `red 5`, `yellow reverse`, `wild color`...')
         }
