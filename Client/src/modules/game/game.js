@@ -1,4 +1,4 @@
-const nrc = require('node-run-cmd');
+const spawn = require("child_process").spawn;
 
 const cards = [
     'r_0', 'r_1', 'r_2', 'r_3', 'r_4', 'r_5', 'r_6', 'r_7', 'r_8', 'r_9', 'r_d2', 'r_reverse', 'r_skip',
@@ -30,9 +30,9 @@ module.exports.start = async (client, players) => {
 
         for (let i = 0; i < 7; i++) game.deck[p].push(cards[Math.floor(Math.random() * cards.length)]);
 
-        nrc.run(`python ../../../../Python/merge.py ${game.deck[p].join(' ')}`)
+        spawn('python', [`/src/modules/game/merge.py ${game.deck[p].join(' ')}`]);
 
-        console.log(game.deck[p])
+        console.log(game.deck[p].join(' '))
 
         const category = await client.guilds.get(players[p]).channels.find(c => c.name == 'UNO' && c.type == 'category');
         const channel = await client.guilds.get(players[p]).createChannel(`${user.username}-${p.substr(0, 8)}`, 'text');
@@ -40,7 +40,7 @@ module.exports.start = async (client, players) => {
 
         channel.send(`Hello, <@${p}>! This is your private Uno room! Nobody except you can see messages here. You'll be playing with others from this room.`);
 
-        channel.send('This is your deck', { file: '../Python/last.png' })
+        channel.send('This is your deck', { file: 'last.png' })
     });
 
 }

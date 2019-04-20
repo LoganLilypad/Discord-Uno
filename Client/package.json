@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "node-run-cmd": "^1.0.1",
     "util": "^0.11.1"
   },
   "bugs": {
